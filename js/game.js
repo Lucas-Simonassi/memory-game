@@ -53,7 +53,7 @@ if (disabledCards.length == 28) {
       exitButton.textContent = 'Sair';
       exitButton.onclick = () => {
         // Voltar à tela de login
-        window.location.href = 'file:///C:/Users/User/Documents/Jogo/game.html';
+        window.location.href = 'file:///C:/Users/User/Documents/Jogo/index.html';
       };
   
       buttonsContainer.appendChild(restartButton);
