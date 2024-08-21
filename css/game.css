@@ -1,0 +1,131 @@
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url('../images/fundo02.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: rgba(228, 23, 228, 0.8);
+font-size: 1.2em;
+width: 100%;
+max-width: 1000px ;
+padding: 10px;
+margin: 0 0 20px;
+border-radius: 5px;
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    background-color:  #335;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid purple;
+    border-radius: 5px;
+    transition: all 400ms ease;
+}
+
+.front {
+    transform: rotateY(180deg);
+    
+}
+
+.back {
+    background-image: url('../images/frente.png');
+    backface-visibility: hidden;
+   
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+
+}
+
+.disabled-card {
+    filter:saturate(0);
+    opacity: 0.5;
+}
+
+#endgame-buttons {
+    position: fixed;
+    flex-wrap: wrap;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  #endgame-buttons button {
+    background-color: rgba(228, 23, 228, 0.8);
+    border-radius: 8px;
+    color: blue;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  min-width: 120px;
+  }
+
+@media screen and (max-width:920px) {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+  
+    }
+  }
+
+  @media (max-width: 600px) {
+   
+    #endgame-buttons button {
+        
+        width: 100%;
+        max-width: 280px;
+        font-size: 9px;
+    }
+}
+
+    @media (max-width: 600px) {
+    
+        main {
+            background-size: contain;
+          background-repeat: no-repeat; 
+        background-position: center center; 
+        background-size: cover;
+        background-attachment: fixed; 
+        }
+
+        header {
+            width: 100%;
+            max-width: 550px;
+            font-size: 14px;
+
+        }
+    }    
